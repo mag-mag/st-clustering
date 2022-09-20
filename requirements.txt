@@ -1,5 +1,5 @@
-aiohttp
 asyncio
 pandas
 networkx
 datetime
+aiohttp
