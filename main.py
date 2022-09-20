@@ -11,7 +11,7 @@ st.header('Clustering App')
 
 
 api_key = st.text_input(label='Aves API key:',max_chars=28)
-st.write(api_key)
+
 
 uploaded_file = st.file_uploader("Choose your file:",)
 
