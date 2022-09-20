@@ -9,24 +9,27 @@ from datetime import datetime
 
 st.header('Clustering App')
 
-api_key = 'P9KHN10A8N40XTHG8QF41B7TBJQ5'
 
+api_key = st.text_input(label='Aves API key:',max_chars=28)
+st.write(api_key)
 
 uploaded_file = st.file_uploader("Choose your file:",)
 
+try:
+    all_df = pd.read_csv(uploaded_file)
 
-all_df = pd.read_csv(uploaded_file)
-headers = all_df.columns.to_list()
+    headers = all_df.columns.to_list()
 
-keyword_col = st.selectbox(label='Select KEYWORD column name:', options=headers)
-query_list = list(all_df[keyword_col].unique())
-st.write(query_list[:10])
+    keyword_col = st.selectbox(label='Select KEYWORD column name:', options=headers)
+    query_list = list(all_df[keyword_col].unique())
+    st.write(query_list[:10])
 
 
-sameUrl = st.slider('How many URLs do you want to pair?',0,10,6)
+    sameUrl = st.slider('How many URLs do you want to pair?',0,10,6)
 
-list_end = len(query_list)
-
+    list_end = len(query_list)
+except:
+    pass
 
 step = 5000
 
