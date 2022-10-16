@@ -1,6 +1,6 @@
+import pandas as pd
 import aiohttp
 import asyncio
-import pandas as pd
 import streamlit as st
 import networkx as nx
 from networkx.algorithms import community
